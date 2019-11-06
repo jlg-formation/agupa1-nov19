@@ -2,7 +2,9 @@
 
 @import '../node_modules/normalize.css/normalize.css';
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -16,6 +18,10 @@ main {
   padding: 0 0.5em;
 }
 
+h1 {
+  text-align: center;
+}
+
 a {
   color: inherit;
   text-decoration: inherit;
@@ -25,7 +31,8 @@ a:hover {
   text-decoration: underline;
 }
 
-button, input {
+button,
+input {
   border: 0.1em solid #ddd;
   padding: 0.5em 1em;
 }
@@ -44,6 +51,22 @@ button {
     &:active {
       border-color: #bbb;
       background: #bbb;
+    }
+
+    &.primary {
+      border-color: #333;
+      background: #333;
+      color: white;
+
+      &:hover {
+        border-color: #555;
+        background: #555;
+      }
+
+      &:active {
+        border-color: #666;
+        background: #666;
+      }
     }
   }
 }
