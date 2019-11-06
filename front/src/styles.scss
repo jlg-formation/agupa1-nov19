@@ -2,6 +2,14 @@
 
 @import "../node_modules/normalize.css/normalize.css";
 
+main {
+  display: flex;
+  max-width: 40em;
+  min-width: 20em;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 a {
   color: inherit;
   text-decoration: inherit;
