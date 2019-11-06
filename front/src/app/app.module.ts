@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { MainModule } from './main/main.module';
+import { QuizzCreateModule } from './quizz-create/quizz-create.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { MainModule } from './main/main.module';
   imports: [
     BrowserModule,
     LayoutModule,
-    MainModule
+    MainModule,
+    QuizzCreateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
