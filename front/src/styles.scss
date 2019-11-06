@@ -2,7 +2,6 @@
 
 @import "../node_modules/normalize.css/normalize.css";
 
-
 a {
   color: inherit;
   text-decoration: inherit;
@@ -15,4 +14,18 @@ a:hover {
 button {
   border: 0.1em solid #ddd;
   background: #ddd;
+
+  &:not(:disabled) {
+    cursor: pointer;
+
+    &:hover {
+      border-color: #ccc;
+      background: #ccc;
+    }
+
+    &:active {
+      border-color: #bbb;
+      background: #bbb;
+    }
+  }
 }
