@@ -1,7 +1,22 @@
 img {
   width: 1.5em;
+  margin-right: 0.5em;
 }
 
 header {
+  display: flex;
+  align-items: center;
   background: #ddd;
+  height: 3em;
+  padding: 0 0.5em;
+}
+
+div {
+  display: flex;
+  align-items: center;
+}
+
+span {
+  font-weight: bold;
+  font-size: 1.3em;
 }
