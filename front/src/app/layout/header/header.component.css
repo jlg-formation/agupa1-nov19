@@ -14,13 +14,9 @@ header {
 a {
   display: flex;
   align-items: center;
-  color: inherit;
-  text-decoration: inherit;
 }
 
-a:hover {
-  text-decoration: underline;
-}
+
 
 span {
   font-weight: bold;
