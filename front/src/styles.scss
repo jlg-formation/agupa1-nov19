@@ -10,6 +10,11 @@
 
 body {
   font-family: sans-serif;
+  font-size: 110%;
+
+  @media (min-width: 960px) and (min-height: 600px) {
+    font-size: 2vh;
+  }
 }
 
 main {
