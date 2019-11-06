@@ -4,10 +4,12 @@
 
 main {
   display: flex;
+  flex-flow: column;
   max-width: 40em;
-  min-width: 20em;
+  min-width: 19em;
   align-items: center;
   justify-content: space-evenly;
+  padding: 0 0.5em;
 }
 
 a {
