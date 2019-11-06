@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { QuizzCreateRoutingModule } from './quizz-create-routing.module';
+import { WidgetModule } from '../widget/widget.module';
 import { CreateComponent } from './create/create.component';
 import { SetupComponent } from './setup/setup.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
@@ -15,6 +16,7 @@ import { FinishedComponent } from './finished/finished.component';
     CommonModule,
     QuizzCreateRoutingModule,
     FontAwesomeModule,
+    WidgetModule,
   ]
 })
 export class QuizzCreateModule { }
