@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { QuizzPlayRoutingModule } from './quizz-play-routing.module';
 import { ListComponent } from './list/list.component';
@@ -11,6 +12,7 @@ import { ScoreComponent } from './score/score.component';
   declarations: [ListComponent, QuestionComponent, ScoreComponent],
   imports: [
     CommonModule,
+    FontAwesomeModule,
     QuizzPlayRoutingModule
   ]
 })
