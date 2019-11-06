@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: sans-serif;
+}
+
 main {
   display: flex;
   flex-flow: column;
@@ -32,7 +36,8 @@ a:hover {
 }
 
 button,
-input {
+input,
+textarea {
   border: 0.1em solid #ddd;
   padding: 0.5em 1em;
 }
@@ -71,6 +76,11 @@ button {
   }
 }
 
-input {
+input,
+textarea {
   width: 100%;
+}
+
+input[type='radio'] {
+  width: 2em;
 }
