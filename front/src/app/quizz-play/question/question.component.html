@@ -2,7 +2,7 @@
   <h1>Quizz : Les plus belles capitales d'europe</h1>
   <h2>Question 1</h2>
   <p>Quelle est la capitale de la France ?</p>
-  <form>
+  <form ngNoForm>
     <label *ngFor="let letter of ['A', 'B', 'C', 'D']">
       <input type="radio" />
       <span class="letter">{{ letter }}</span>
