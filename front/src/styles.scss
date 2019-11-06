@@ -1,12 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "../node_modules/normalize.css/normalize.css";
+@import '../node_modules/normalize.css/normalize.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 main {
   display: flex;
   flex-flow: column;
   max-width: 40em;
-  min-width: 19em;
+  min-width: 20em;
   align-items: center;
   justify-content: space-evenly;
   padding: 0 0.5em;
@@ -21,8 +25,12 @@ a:hover {
   text-decoration: underline;
 }
 
-button {
+button, input {
   border: 0.1em solid #ddd;
+  padding: 0.5em 1em;
+}
+
+button {
   background: #ddd;
 
   &:not(:disabled) {
@@ -38,4 +46,8 @@ button {
       background: #bbb;
     }
   }
+}
+
+input {
+  width: 100%;
 }
