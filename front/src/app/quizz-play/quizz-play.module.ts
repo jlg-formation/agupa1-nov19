@@ -6,6 +6,7 @@ import { QuizzPlayRoutingModule } from './quizz-play-routing.module';
 import { ListComponent } from './list/list.component';
 import { QuestionComponent } from './question/question.component';
 import { ScoreComponent } from './score/score.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ScoreComponent } from './score/score.component';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    QuizzPlayRoutingModule
+    QuizzPlayRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class QuizzPlayModule { }
