@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuizzService } from 'src/app/service/quizz.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Question } from 'src/app/interface/question';
 
 @Component({
   selector: 'app-add-question',
@@ -26,7 +27,7 @@ export class AddQuestionComponent implements OnInit {
   ngOnInit() {}
 
   submit() {
-    console.log('submit');
+    this.quizz.addQuestion(this.f.value as Question);
     this.router.navigateByUrl('/setup');
   }
 }

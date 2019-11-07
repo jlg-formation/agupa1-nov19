@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Quizz } from '../class/quizz';
+import { Question } from '../interface/question';
 
 @Injectable({
   providedIn: 'root',
@@ -31,5 +32,10 @@ export class QuizzService {
     } catch (error) {
       return undefined;
     }
+  }
+
+  addQuestion(question: Question) {
+    this.current.questions.push(question);
+    this.saveCurrent();
   }
 }
