@@ -1,11 +1,6 @@
 <main>
   <h1>Liste des quizz</h1>
   <div>
-    <button routerLink="/question">Les plus belles capitales d'europe</button>
-    <button>Les plus belles capitales d'europe</button>
-    <button>Les plus belles capitales d'europe</button>
-    <button>Les plus belles capitales d'europe</button>
-    <button>Les plus belles capitales d'europe</button>
-    <button>Les plus belles capitales d'europe</button>
+    <button *ngFor="let q of quizz.getArray()" routerLink="/question">{{ q.name }}</button>
   </div>
 </main>

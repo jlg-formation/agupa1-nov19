@@ -72,4 +72,8 @@ export class QuizzService {
   hasQuizz(): boolean {
     return Object.values(this.map).length > 0;
   }
+
+  getArray() {
+    return Object.values(this.map);
+  }
 }
