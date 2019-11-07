@@ -1,17 +1,18 @@
 <main>
   <h1>Ajoute une question</h1>
-  <form ngNoForm>
+  <p>Quizz : {{ quizz.current.name }}</p>
+  <form [formGroup]="f">
     <label>
       <div>Enoncé de la question</div>
-      <textarea rows="3"></textarea>
+      <textarea rows="3" formControlName="label"></textarea>
     </label>
     <div class="answers">
       <span *ngFor="let letter of ['A', 'B', 'C', 'D']">
         <label>
           <span>{{ letter }}</span>
-          <input type="text" />
+          <input type="text" [formControlName]="'answer' + letter"/>
         </label>
-        <input type="radio" />
+        <input type="radio" formControlName="correctAnswer" [value]="letter"/>
       </span>
     </div>
     <div class="buttons">

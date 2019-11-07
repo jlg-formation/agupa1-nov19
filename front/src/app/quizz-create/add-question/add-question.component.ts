@@ -1,15 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { QuizzService } from 'src/app/service/quizz.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-question',
   templateUrl: './add-question.component.html',
-  styleUrls: ['./add-question.component.scss']
+  styleUrls: ['./add-question.component.scss'],
 })
 export class AddQuestionComponent implements OnInit {
+  f = new FormGroup({
+    label: new FormControl('Quelle est la capitale de la France ?', [
+      Validators.required,
+      Validators.maxLength(200),
+    ]),
+    answerA: new FormControl('Paris', Validators.required),
+    answerB: new FormControl('Berlin', Validators.required),
+    answerC: new FormControl('Londres', Validators.required),
+    answerD: new FormControl('Bruxelles', Validators.required),
+    correctAnswer: new FormControl('', Validators.required),
+  });
 
-  constructor() { }
+  constructor(public quizz: QuizzService) {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
