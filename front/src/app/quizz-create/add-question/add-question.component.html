@@ -4,20 +4,20 @@
   <form [formGroup]="f" (ngSubmit)="submit()">
     <label>
       <div>Enoncé de la question</div>
-      <textarea rows="3" formControlName="label"></textarea>
+      <textarea appAutofocus rows="3" formControlName="label" tabindex="1"></textarea>
     </label>
     <div class="answers">
-      <span *ngFor="let letter of ['A', 'B', 'C', 'D']">
+      <span *ngFor="let letter of ['A', 'B', 'C', 'D']; let i = index">
         <label>
           <span>{{ letter }}</span>
-          <input type="text" [formControlName]="'answer' + letter"/>
+          <input type="text" [formControlName]="'answer' + letter" [tabindex]="i + 2"/>
         </label>
-        <input type="radio" formControlName="correctAnswer" [value]="letter"/>
+        <input type="radio" formControlName="correctAnswer" [value]="letter" tabindex="6"/>
       </span>
     </div>
     <div class="buttons">
-      <button type="button" routerLink="/setup">Annuler</button>
-      <button type="submit" [disabled]="f.invalid" class="primary">Ajouter</button>
+      <button type="button" routerLink="/setup" tabindex="7">Annuler</button>
+      <button type="submit" [disabled]="f.invalid" class="primary" tabindex="8">Ajouter</button>
     </div>
   </form>
 </main>
