@@ -6,7 +6,7 @@ import { ScoreComponent } from './score/score.component';
 
 const routes: Routes = [
   { path: 'list', component: ListComponent },
-  { path: 'question', component: QuestionComponent },
+  { path: 'question/:questionNbr', component: QuestionComponent },
   { path: 'score', component: ScoreComponent },
 ];
 

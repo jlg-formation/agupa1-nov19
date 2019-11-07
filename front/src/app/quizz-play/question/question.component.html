@@ -1,6 +1,6 @@
 <main>
-  <h1>Quizz : Les plus belles capitales d'europe</h1>
-  <h2>Question 1</h2>
+  <h1>Quizz : {{ quizz.current.name }}</h1>
+  <h2>Question {{ questionNbr }}</h2>
   <p>Quelle est la capitale de la France ?</p>
   <form ngNoForm>
     <label *ngFor="let letter of ['A', 'B', 'C', 'D']">
