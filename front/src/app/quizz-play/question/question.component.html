@@ -2,7 +2,7 @@
   <h1>Quizz : {{ quizz.current.name }}</h1>
   <h2>Question {{ questionNbr }}</h2>
   <p>{{ quizz.current.questions[quizz.progress.questionId].label }}</p>
-  <form [formGroup]="f">
+  <form [formGroup]="f" (ngSubmit)="submit()">
     <label *ngFor="let letter of ['A', 'B', 'C', 'D']">
       <input type="radio" formControlName="answer" [value]="letter" />
       <span class="letter">{{ letter }}</span>
@@ -10,7 +10,7 @@
         quizz.current.questions[quizz.progress.questionId]['answer' + letter]
       }}</span>
     </label>
-    <button [disabled]="f.invalid" class="primary" routerLink="/score">
+    <button type="submit" [disabled]="f.invalid" class="primary" >
       Suivant
     </button>
   </form>
