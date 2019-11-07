@@ -1,6 +1,9 @@
 <main>
   <fa-icon [icon]="faSmileWink"></fa-icon>
   <h1>Bravo !</h1>
-  <p>Ton score : 3 / 4.</p>
+  <p>
+    Ton score : {{ quizz.progress.score }} /
+    {{ quizz.current.questions.length }}.
+  </p>
   <button class="primary" routerLink="/">Retour Accueil</button>
 </main>
