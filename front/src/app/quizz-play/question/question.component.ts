@@ -47,6 +47,7 @@ export class QuestionComponent implements OnInit {
       this.router.navigateByUrl('/score');
       return;
     }
+    this.f.reset();
     this.router.navigateByUrl(`/question/${this.quizz.progress.questionId + 1}`);
   }
 }
