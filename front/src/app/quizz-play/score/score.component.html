@@ -1,6 +1,14 @@
 <main>
-  <fa-icon [icon]="faSmileWink"></fa-icon>
-  <h1>Bravo !</h1>
+  <ng-container *ngIf="quizz.progress.score === quizz.current.questions.length; then goodScore; else badScore">
+  </ng-container>
+  <ng-template #goodScore>
+    <fa-icon [icon]="faSmileWink"></fa-icon>
+    <h1>Bravo !</h1>
+  </ng-template>
+  <ng-template #badScore>
+    <fa-icon [icon]="faPoo"></fa-icon>
+    <h1>Peut mieux faire...</h1>
+  </ng-template>
   <p>
     Ton score : {{ quizz.progress.score }} /
     {{ quizz.current.questions.length }}.
