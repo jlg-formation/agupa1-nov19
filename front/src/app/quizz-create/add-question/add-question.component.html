@@ -1,4 +1,4 @@
-<main>
+<main *ngIf="quizz.current">
   <h1>Ajoute une question</h1>
   <p>Quizz : {{ quizz.current.name }}</p>
   <form [formGroup]="f" (ngSubmit)="submit()">

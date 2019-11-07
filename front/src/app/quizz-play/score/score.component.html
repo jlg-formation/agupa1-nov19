@@ -1,4 +1,4 @@
-<main>
+<main *ngIf="quizz.progress">
   <ng-container *ngIf="quizz.progress.score === quizz.current.questions.length; then goodScore; else badScore">
   </ng-container>
   <ng-template #goodScore>
