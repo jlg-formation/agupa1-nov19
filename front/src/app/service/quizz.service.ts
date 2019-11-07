@@ -3,7 +3,7 @@ import { Quizz } from '../class/quizz';
 import { Question } from '../interface/question';
 import { Progress } from '../interface/progress';
 
-interface QuizzMap {
+export interface QuizzMap {
   [name: string]: Quizz;
 }
 

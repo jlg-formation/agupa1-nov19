@@ -6,19 +6,21 @@ import { LayoutModule } from './layout/layout.module';
 import { MainModule } from './main/main.module';
 import { QuizzCreateModule } from './quizz-create/quizz-create.module';
 import { QuizzPlayModule } from './quizz-play/quizz-play.module';
+import { QuizzService } from './service/quizz.service';
+import { HttpQuizzService } from './service/http-quizz.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     LayoutModule,
     MainModule,
     QuizzCreateModule,
-    QuizzPlayModule
+    QuizzPlayModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{ provide: QuizzService, useClass: HttpQuizzService }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
