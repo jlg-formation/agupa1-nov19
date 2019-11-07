@@ -2,5 +2,5 @@
   <h1>Quizz: {{ quizz.current.name }}</h1>
   <p>Nombre question : {{ quizz.current.questions.length }}</p>
   <button appAutofocus class="primary" routerLink="/add-question">Ajoute une question</button>
-  <button *ngIf="quizz.current.questions.length > 0" routerLink="/finished">Sauve le quizz</button>
+  <button *ngIf="quizz.current.questions.length > 0" (click)="save()">Sauve le quizz</button>
 </main>
