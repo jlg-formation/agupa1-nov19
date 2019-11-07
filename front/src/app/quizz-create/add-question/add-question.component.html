@@ -1,7 +1,7 @@
 <main>
   <h1>Ajoute une question</h1>
   <p>Quizz : {{ quizz.current.name }}</p>
-  <form [formGroup]="f">
+  <form [formGroup]="f" (ngSubmit)="submit()">
     <label>
       <div>Enoncé de la question</div>
       <textarea rows="3" formControlName="label"></textarea>
@@ -16,8 +16,8 @@
       </span>
     </div>
     <div class="buttons">
-      <button routerLink="/setup">Annuler</button>
-      <button class="primary" routerLink="/setup">Ajouter</button>
+      <button type="button" routerLink="/setup">Annuler</button>
+      <button type="submit" [disabled]="f.invalid" class="primary">Ajouter</button>
     </div>
   </form>
 </main>
