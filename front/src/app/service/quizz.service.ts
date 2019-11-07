@@ -68,4 +68,8 @@ export class QuizzService {
   saveMap() {
     localStorage.setItem('map', JSON.stringify(this.map));
   }
+
+  hasQuizz(): boolean {
+    return Object.values(this.map).length > 0;
+  }
 }

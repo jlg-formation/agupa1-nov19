@@ -1,4 +1,4 @@
 <main>
   <button routerLink="/create">Crée ton Quizz</button>
-  <button routerLink="/list">Fais un Quizz</button>
+  <button [disabled]="!quizz.hasQuizz()" routerLink="/list">Fais un Quizz</button>
 </main>
