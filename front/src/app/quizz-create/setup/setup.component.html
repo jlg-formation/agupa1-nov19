@@ -1,6 +1,6 @@
 <main>
   <h1>Quizz: {{ quizz.current.name }}</h1>
-  <p>Nombre question : {{ 1+2 }}</p>
+  <p>Nombre question : {{ quizz.current.questions.length }}</p>
   <button class="primary" routerLink="/add-question">Ajoute une question</button>
   <button routerLink="/finished">Sauve le quizz</button>
 </main>
