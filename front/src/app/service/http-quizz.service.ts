@@ -16,7 +16,7 @@ export class HttpQuizzService extends QuizzService {
       },
       error: err => {
         console.error('err: ', err);
-      }
+      },
     });
   }
 
@@ -28,7 +28,7 @@ export class HttpQuizzService extends QuizzService {
       },
       error: err => {
         console.error('err: ', err);
-      }
+      },
     });
   }
 }
