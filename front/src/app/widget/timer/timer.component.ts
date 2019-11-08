@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-timer',
   templateUrl: './timer.component.html',
-  styleUrls: ['./timer.component.scss']
+  styleUrls: ['./timer.component.scss'],
 })
 export class TimerComponent implements OnInit {
+  @Input() duration = 120;
+  counter: number;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.counter = this.duration;
+    setInterval(() => {
+      this.counter--;
+    }, 1000);
   }
-
 }
