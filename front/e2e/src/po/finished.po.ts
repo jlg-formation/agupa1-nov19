@@ -1,11 +1,13 @@
 import { browser, by, element } from 'protractor';
 
-export class AppPage {
-  navigateTo() {
-    return browser.get(browser.baseUrl) as Promise<any>;
+export class FinishedPage {
+  async getCongratMsg() {
+    return element(by.css('h1')).getText();
   }
 
-  getTitleText() {
-    return element(by.css('header span')).getText() as Promise<string>;
+  async clickOnHomeButton() {
+    await element(by.css('button'));
   }
+
+
 }

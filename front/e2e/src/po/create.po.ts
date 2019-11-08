@@ -1,11 +1,13 @@
 import { browser, by, element } from 'protractor';
 
-export class AppPage {
-  navigateTo() {
-    return browser.get(browser.baseUrl) as Promise<any>;
+export class CreatePage {
+  async enterQuizzName(text: string) {
+    const input = element(by.css('input'));
+    await input.clear();
+    await input.sendKeys(text);
   }
 
-  getTitleText() {
-    return element(by.css('header span')).getText() as Promise<string>;
+  async clickOnNext() {
+    await element(by.css('button')).click();
   }
 }
