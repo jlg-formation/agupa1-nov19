@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Observable, interval } from 'rxjs';
+import { map, startWith, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-timer',
@@ -10,8 +12,7 @@ export class TimerComponent implements OnInit {
 
   @Output() dringdring = new EventEmitter<{ msg: string }>();
 
-  counter: number;
-  intervalId: any;
+  counter$: Observable<number>;
 
   constructor() {}
 
@@ -20,18 +21,18 @@ export class TimerComponent implements OnInit {
   }
 
   reset() {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-    }
-    this.intervalId = undefined;
-    this.counter = this.duration;
-    this.intervalId = setInterval(() => {
-      this.counter--;
-      if (this.counter === 0) {
-        clearInterval(this.intervalId);
-        this.intervalId = undefined;
-        this.dringdring.emit({msg: 'too late...'});
-      }
-    }, 1000);
+    this.counter$ = interval(1000).pipe(
+      map(x => x + 1),
+      startWith(0),
+      take(this.duration + 1),
+      map(x => this.duration - x),
+      map(x => {
+        console.log('x: ', x);
+        if (x === 0) {
+          this.dringdring.emit({ msg: 'too late...' });
+        }
+        return x;
+      })
+    );
   }
 }
