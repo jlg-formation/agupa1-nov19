@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { QuizzService } from 'src/app/service/quizz.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { TimerComponent } from 'src/app/widget/timer/timer.component';
 
 @Component({
   selector: 'app-question',
@@ -11,6 +12,8 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 })
 export class QuestionComponent implements OnInit {
   questionNbr: number;
+
+  @ViewChild(TimerComponent, { static: false }) timer: TimerComponent;
 
   f = new FormGroup({
     answer: new FormControl('', Validators.required),
@@ -48,6 +51,14 @@ export class QuestionComponent implements OnInit {
       return;
     }
     this.f.reset();
-    this.router.navigateByUrl(`/question/${this.quizz.progress.questionId + 1}`);
+    this.timer.reset();
+    this.router.navigateByUrl(
+      `/question/${this.quizz.progress.questionId + 1}`
+    );
+  }
+
+  onTimeout(evt: { msg: string }) {
+    console.log('evt: ', evt);
+    this.submit();
   }
 }
