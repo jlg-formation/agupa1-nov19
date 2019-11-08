@@ -1,0 +1,52 @@
+:host {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  padding: 0 0.5em;
+  cursor: pointer;
+  font-size: 1.5em;
+  user-select: none;
+
+  input {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    $side: 1.3em;
+    height: $side;
+    width: $side;
+    background-color: #aaa;
+    border-radius: 50%;
+
+    &::after {
+      content: '';
+      display: none;
+      $side2: 0.8em;
+      width: $side2;
+      height: $side2;
+      border-radius: 50%;
+      background: white;
+    }
+  }
+
+  &:hover {
+    .checkmark {
+      background-color: #999;
+    }
+  }
+
+  input:checked ~ .checkmark {
+    background-color: #555;
+    &::after {
+      display: block;
+    }
+  }
+}

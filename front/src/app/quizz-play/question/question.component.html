@@ -5,7 +5,9 @@
   <p>{{ quizz.current.questions[quizz.progress.questionId].label }}</p>
   <form [formGroup]="f" (ngSubmit)="submit()">
     <label *ngFor="let letter of ['A', 'B', 'C', 'D']">
-      <input type="radio" formControlName="answer" [value]="letter" />
+      <app-radio-button>
+        <input type="radio" formControlName="answer" [value]="letter" />
+      </app-radio-button>
       <span class="letter">{{ letter }}</span>
       <span>{{
         quizz.current.questions[quizz.progress.questionId]['answer' + letter]
